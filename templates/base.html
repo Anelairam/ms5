@@ -15,6 +15,8 @@
 
     {% block corecss %}
         <!--Add updated bootstrap css-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/18790947d7.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
@@ -23,6 +25,7 @@
 
     {% block corejs %}
         <!--Add updated bootstrap js-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     {% endblock %}
 
     {% block extra_je %}
@@ -32,9 +35,9 @@
 </head>
 <body>
     <header class="container-fluid fixed-top">
-        <div id="topnav" class="row">
+        <div id="topnav" class="row bg-white d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-                <a href="{% url 'home' %}">
+                <a href="{% url 'home' %}" class="nav-link main-logo-link">
                     <h2 class="logo-font text-black my-0"><strong>Flying Eyes</strong></h2>
                 </a>
             </div>
@@ -53,31 +56,27 @@
                     </div>
                 </form>
             </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <!--
-                    dropdown menu needs to be fixed
-                <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-                    <li class="list-inline-item dropdown">
-                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="text-center">
-                                <div><i class="fas fa-user fa-lg"></i></div>
-                                <p class="my-0">My Account</p>
-                            </div>
-                        </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                            {% if request.user.is_authenticated %}
+                <!--Account menu-->
+                <div class="col">
+                    <button class="btn btn-secondary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="row">
+                            <div class="col"><i class="fas fa-user fa-lg"></i></div>
+                            <div class="col">My Account</div>
+                        </div>                    
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                    <a href="" class="dropdown-item">Product Management</a>
+                                    <li><a href="" class="dropdown-item">Product Management</a></li>
                                 {% endif %}
-                                <a href="" class="dropdown-item">My Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                <li><a href="" class="dropdown-item">My Profile</a></li>
+                                <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
                             {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
+                                <li><a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
                             {% endif %}
-                        </div>
-                    </li>
-                    <li class="list-inline-item">
+                    </ul>
+                    <div class="col">
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
@@ -90,9 +89,18 @@
                                 </p>
                             </div>
                         </a>
-                    </li>
-                </ul>
-                -->
+                    </div>
+                </div>
+            </div>
+        <!--Main nav barr-->
+        <div class="row bg-white bg-white d-none d-lg-flex">
+            <div class="mx-auto" id="secnav">
+                <div class="list-group list-group-horizontal list-group-flush text-center text-uppercase w-100" id="secnav">
+                    <a href="#" class="list-group-item list-group-item-action">Home</a>
+                    <a href="#" class="list-group-item list-group-item-action">About</a>
+                    <a href="#" class="list-group-item list-group-item-action">E-Shop</a>
+                    <a href="#" class="list-group-item list-group-item-action">Contact Us</a>
+                </div>
             </div>
         </div>
     </header>
