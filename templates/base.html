@@ -93,7 +93,14 @@
                 </a>
             </div>
         </div>
-        <!--Main nav barr-->
+        <!--Main nav bar-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            {% include 'includes/mobile-header.html' %} 
+        </nav>
+        <!--        
         <div class="row bg-white bg-white d-none d-lg-flex">
             <div class="mx-auto" id="secnav">
                 <div class="list-group list-group-horizontal list-group-flush text-center text-uppercase w-100" id="secnav">
@@ -105,6 +112,7 @@
                 </div>
             </div>
         </div>
+        -->
     </header>
 
     {% if messages %}
