@@ -9,3 +9,7 @@ body {
 #secnav{
     width: 50%;
 }
+
+.header-container {
+    padding-top: 164px;
+}
