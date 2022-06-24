@@ -94,25 +94,13 @@
             </div>
         </div>
         <!--Main nav bar-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg row bg-white d-none d-lg-flex">
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             {% include 'includes/mobile-header.html' %} 
+            {% include 'includes/main-nav.html' %}
         </nav>
-        <!--        
-        <div class="row bg-white bg-white d-none d-lg-flex">
-            <div class="mx-auto" id="secnav">
-                <div class="list-group list-group-horizontal list-group-flush text-center text-uppercase w-100" id="secnav">
-                    <a href="#" class="list-group-item list-group-item-action">Home</a>
-                    <a href="#" class="list-group-item list-group-item-action">About</a>
-                    <a href="#" class="list-group-item list-group-item-action">Products</a>
-                    <a href="#" class="list-group-item list-group-item-action">Courses</a>
-                    <a href="#" class="list-group-item list-group-item-action">Contact Us</a>
-                </div>
-            </div>
-        </div>
-        -->
     </header>
 
     {% if messages %}
