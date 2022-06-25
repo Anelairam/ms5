@@ -8,8 +8,8 @@
                 </button>
                 <div class="dropdown-menu border-0 w-100" aria-labelledby="dropdownProductsButton">
                     <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
-                    <a href="" class="dropdown-item">Drones</a>
-                    <a href="" class="dropdown-item">DSLR</a>
+                    <a href="{% url 'products' %}?category=drones" class="dropdown-item">Drones</a>
+                    <a href="{% url 'products' %}?category=dslr" class="dropdown-item">DSLR</a>
                 </div>
             </li>
             <li class="list-group-item list-group-item-action list-inline-item">Courses</li>
